@@ -1,4 +1,4 @@
-package med.val.api.medico;
+package med.val.api.produto;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
@@ -7,22 +7,18 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import med.val.api.endereco.DadosEndereco;
 
-public record DadosDoCadastro(
+public record DadosCadastroProduto(
+
         @NotBlank
         String nome,
         @NotBlank
-        @Email
-        String email,
+        String categoria,
 
         @NotBlank
-        String telefone,
+        String preco,
 
         @NotBlank
-        @Pattern(regexp = "\\d{4,6}")
-        String crm,
-        @NotNull
-        Especialidade especialidade,
+        String estoque
 
-        @NotNull @Valid DadosEndereco endereco
 ) {
 }
